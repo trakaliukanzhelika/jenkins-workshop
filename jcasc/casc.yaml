@@ -1,3 +1,21 @@
+jenkins:
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: ${JENKINS_ADMIN_ID}
+          password: ${JENKINS_ADMIN_PASSWORD}
+        - id: "developer"
+          password: "DeveloperSecurePassword123"
+
+  authorizationStrategy:
+    projectMatrix:
+      permissions:
+        - "Overall/Administer:${JENKINS_ADMIN_ID}"
+        - "Overall/Read:developer"
+        - "Job/Read:developer"
+        - "Job/Build:developer"
+
 unclassified:
   location:
-    url: http://${JENKINS_URL}/
+    url: ${JENKINS_URL}
