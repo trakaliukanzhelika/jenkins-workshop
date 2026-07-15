@@ -17,5 +17,6 @@ configuration-as-code:latest
 pipeline-github-lib
 pipeline-stage-view
 workflow-aggregator
-matrix-auth
-terraform
+ssh-slaves:latest
+blueocean:latest
+terraform:latest
